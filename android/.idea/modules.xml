@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android.iml" filepath="$PROJECT_DIR$/.idea/modules/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/370919199/android.device_info.iml" filepath="$PROJECT_DIR$/.idea/modules/370919199/android.device_info.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1522967543/android.flutter_foreground_task.iml" filepath="$PROJECT_DIR$/.idea/modules/-1522967543/android.flutter_foreground_task.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/725172511/android.flutter_local_notifications.iml" filepath="$PROJECT_DIR$/.idea/modules/725172511/android.flutter_local_notifications.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2070773523/android.minimize_app.iml" filepath="$PROJECT_DIR$/.idea/modules/-2070773523/android.minimize_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1061146327/android.path_provider_android.iml" filepath="$PROJECT_DIR$/.idea/modules/-1061146327/android.path_provider_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1866369360/android.receive_sharing_intent.iml" filepath="$PROJECT_DIR$/.idea/modules/-1866369360/android.receive_sharing_intent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1200233684/android.share_plus.iml" filepath="$PROJECT_DIR$/.idea/modules/-1200233684/android.share_plus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-513790972/android.shared_preferences_android.iml" filepath="$PROJECT_DIR$/.idea/modules/-513790972/android.shared_preferences_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-443995565/android.uni_links.iml" filepath="$PROJECT_DIR$/.idea/modules/-443995565/android.uni_links.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1309690783/android.url_launcher_android.iml" filepath="$PROJECT_DIR$/.idea/modules/-1309690783/android.url_launcher_android.iml" />
+    </modules>
+  </component>
+</project>

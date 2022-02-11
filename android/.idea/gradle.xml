@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="GRADLE" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../../../Gradle/bin/.gradle" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="D:/Programs/flutter/.pub-cache/hosted/pub.dartlang.org/device_info-2.0.3/android" />
+            <option value="D:/Programs/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_foreground_task-3.5.0/android" />
+            <option value="D:/Programs/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_local_notifications-9.2.0/android" />
+            <option value="D:/Programs/flutter/.pub-cache/hosted/pub.dartlang.org/minimize_app-0.1.1/android" />
+            <option value="D:/Programs/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_android-2.0.9/android" />
+            <option value="D:/Programs/flutter/.pub-cache/hosted/pub.dartlang.org/receive_sharing_intent-1.4.5/android" />
+            <option value="D:/Programs/flutter/.pub-cache/hosted/pub.dartlang.org/share_plus-3.0.4/android" />
+            <option value="D:/Programs/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_android-2.0.9/android" />
+            <option value="D:/Programs/flutter/.pub-cache/hosted/pub.dartlang.org/uni_links-0.5.1/android" />
+            <option value="D:/Programs/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher_android-6.0.13/android" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
