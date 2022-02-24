@@ -136,8 +136,22 @@ class SpotifyWebApi {
       String? id = (await spotify!.me.get()).id;
       Playlist playlist = await spotify!.playlists.createPlaylist(id!, title,
           description: description, public: !isPrivate);
+      // Maximum number of songs that can be added to a playlist at once.
+      int maxNumberOfSongsPerApiCall = 99;
+
       // Add songs to the playlist.
-      await spotify!.playlists.addTracks(trackUris, playlist.id!);
+      int numberOfCalls =
+          (trackUris.length / maxNumberOfSongsPerApiCall).ceil();
+      for (int i = 1; i < numberOfCalls + 1; i++) {
+        await spotify!.playlists.addTracks(
+            trackUris.sublist(
+                (i - 1) * maxNumberOfSongsPerApiCall,
+                i * maxNumberOfSongsPerApiCall > trackUris.length
+                    ? trackUris.length
+                    : i * maxNumberOfSongsPerApiCall),
+            playlist.id!);
+      }
+
       return true;
     } on Exception catch (e) {
       Logger.error(e);

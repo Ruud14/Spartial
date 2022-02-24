@@ -20,7 +20,7 @@ Songs can be added to Spartial by sharing them from Spotify to Spartial. Then, i
 
 ###  How to install
 - #### Option 1: From .apk or .ipa:
-This app is not available in the App store or Play store, please read [About the app](https://spartial.app/about) to find out why. Thus, you'll have to install the app by means of its [.apk](https://github.com/Ruud14/Spartial/releases/download/v1.0.1/Spartial1.0.1.apk) or .ipa (might come soon) file. 
+This app is not available in the App store or Play store, please read [About the app](https://spartial.app/about) to find out why. Thus, you'll have to install the app by means of its [.apk](https://github.com/Ruud14/Spartial/releases/download/v1.0.2/Spartial1.0.2.apk) or .ipa (might come soon) file. 
 
 - ####  Option 2: From source code
 Building the app from the source code is also possible. Besides the fact that I expect you to know how to [build a flutter app from source](https://docs.flutter.dev/deployment/android#build-an-apk), the setup process differs in a couple of ways, one of which is:
