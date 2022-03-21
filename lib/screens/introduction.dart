@@ -1,5 +1,5 @@
 import 'dart:ui';
-
+import 'dart:io' show Platform;
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:spartial/services/settings.dart';
@@ -263,7 +263,7 @@ class _IntroductionPageState extends State<IntroductionPage> {
               height: 60.h,
             ),
             Image.asset(
-              'assets/spartial_notification.png',
+              Platform.isIOS ? 'assets/ios_notification.jpg' : 'assets/spartial_notification.png' ,
               width: MediaQuery.of(context).size.width / 3 * 2,
             ),
             SizedBox(

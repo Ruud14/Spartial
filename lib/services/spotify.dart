@@ -7,6 +7,7 @@ import 'package:spartial/services/settings.dart';
 import 'package:spartial/services/storage.dart';
 import 'dart:core';
 import 'dart:async';
+import 'dart:io' show Platform;
 import 'package:http/http.dart' as http;
 import 'package:spotify/spotify.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -388,6 +389,15 @@ class SpotifyWebApi {
           throw Exception("Link == null!");
         } else {
           if (link.startsWith(redirectUri)) {
+            // Manually hide the web view on iOS.
+            if (Platform.isIOS){
+              try {
+                await closeWebView();
+              } on Exception catch (e){
+                Logger.error(e);
+              }
+              
+            }
             String responseUri = link;
             // Deal with access being denied.
             if (responseUri.endsWith('access_denied')) {

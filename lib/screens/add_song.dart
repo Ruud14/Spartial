@@ -277,106 +277,123 @@ class _AddSongScreenState extends State<AddSongScreen> {
           child: Scaffold(
             body: Padding(
               padding: EdgeInsets.fromLTRB(100.w, 0, 100.w, 0),
-              child: Center(
-                child: SingleChildScrollView(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
+              child: Column(
+                children: [
+                  // Back button.
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
                     children: [
-                      Image.asset(
-                        "assets/spotify/Spotify_Logo_RGB_White.png",
-                        height: 70.sp,
+                      IconButton(
+                        highlightColor: Theme.of(context).scaffoldBackgroundColor,
+                        onPressed: () {
+                          Navigator.pop(context);
+                        }, 
+                        icon: Icon(Icons.arrow_back_ios, color: Theme.of(context).highlightColor,)
                       ),
-                      // Overlay the song cover with the slider text.
-                      Stack(
-                        children: [
-                          // Cover image
-                          Image.network(
-                            song!.imageReference!,
-                            height: 1000.sp,
-                            width: 1000.sp,
-                            errorBuilder: (context, error, stackTrace) {
-                              return Container(
-                                width: 1000.sp,
-                                height: 1000.sp,
-                                child: Center(
-                                  child: Icon(
-                                    Icons.signal_wifi_connected_no_internet_4,
-                                    color: Colors.red,
-                                    size: 300.sp,
-                                  ),
-                                ),
-                              );
-                            },
-                          ),
-                          AnimatedOpacity(
-                            opacity: coverOverlayIsVisible ? 0.5 : 0.0,
-                            duration: const Duration(milliseconds: 500),
-                            child: Container(
-                              width: 1000.sp,
-                              height: 1000.sp,
-                              color: Theme.of(context).scaffoldBackgroundColor,
-                              child: Center(
-                                child: Text(
-                                  coverOverlayText,
-                                  maxLines: 1,
-                                  style: Theme.of(context).textTheme.headline1,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      // Track name
-                      SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Text(
-                          song!.name,
-                          style: Theme.of(context).textTheme.headline2,
-                          overflow: TextOverflow.clip,
-                          softWrap: false,
-                        ),
-                      ),
-                      SizedBox(height: 15.h),
-                      // Artist name
-                      SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Text(
-                          song!.artist,
-                          style: Theme.of(context).textTheme.subtitle1,
-                          overflow: TextOverflow.clip,
-                          softWrap: false,
-                        ),
-                      ),
-                      SizedBox(
-                        height: 60.h,
-                      ),
-                      // Slider
-                      slider,
-                      SizedBox(
-                        height: 60.h,
-                      ),
-                      // Show message when adding an already added song.
-                      widget.sharedStoredSong
-                          ? Container(
-                              padding: EdgeInsets.all(15.sp),
-                              color: Theme.of(context)
-                                  .colorScheme
-                                  .secondary
-                                  .withOpacity(0.3),
-                              child: Center(
-                                child: Text(
-                                  "You've already added this song before 😉",
-                                  style: Theme.of(context).textTheme.subtitle1,
-                                ),
-                              ),
-                            )
-                          : const SizedBox(),
-                      SizedBox(height: 30.h),
-                      // Row for +, - and save buttons.
-                      generateButtonRow(),
                     ],
                   ),
-                ),
+                  Center(
+                    child: SingleChildScrollView(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Image.asset(
+                            "assets/spotify/Spotify_Logo_RGB_White.png",
+                            height: 70.sp,
+                          ),
+                          // Overlay the song cover with the slider text.
+                          Stack(
+                            children: [
+                              // Cover image
+                              Image.network(
+                                song!.imageReference!,
+                                height: 1000.sp,
+                                width: 1000.sp,
+                                errorBuilder: (context, error, stackTrace) {
+                                  return Container(
+                                    width: 1000.sp,
+                                    height: 1000.sp,
+                                    child: Center(
+                                      child: Icon(
+                                        Icons.signal_wifi_connected_no_internet_4,
+                                        color: Colors.red,
+                                        size: 300.sp,
+                                      ),
+                                    ),
+                                  );
+                                },
+                              ),
+                              AnimatedOpacity(
+                                opacity: coverOverlayIsVisible ? 0.5 : 0.0,
+                                duration: const Duration(milliseconds: 500),
+                                child: Container(
+                                  width: 1000.sp,
+                                  height: 1000.sp,
+                                  color: Theme.of(context).scaffoldBackgroundColor,
+                                  child: Center(
+                                    child: Text(
+                                      coverOverlayText,
+                                      maxLines: 1,
+                                      style: Theme.of(context).textTheme.headline1,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          // Track name
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Text(
+                              song!.name,
+                              style: Theme.of(context).textTheme.headline2,
+                              overflow: TextOverflow.clip,
+                              softWrap: false,
+                            ),
+                          ),
+                          SizedBox(height: 15.h),
+                          // Artist name
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Text(
+                              song!.artist,
+                              style: Theme.of(context).textTheme.subtitle1,
+                              overflow: TextOverflow.clip,
+                              softWrap: false,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 60.h,
+                          ),
+                          // Slider
+                          slider,
+                          SizedBox(
+                            height: 60.h,
+                          ),
+                          // Show message when adding an already added song.
+                          widget.sharedStoredSong
+                              ? Container(
+                                  padding: EdgeInsets.all(15.sp),
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .secondary
+                                      .withOpacity(0.3),
+                                  child: Center(
+                                    child: Text(
+                                      "You've already added this song before 😉",
+                                      style: Theme.of(context).textTheme.subtitle1,
+                                    ),
+                                  ),
+                                )
+                              : const SizedBox(),
+                          SizedBox(height: 30.h),
+                          // Row for +, - and save buttons.
+                          generateButtonRow(),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

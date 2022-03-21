@@ -178,10 +178,7 @@ class _MinimizeNotificationPageState extends State<MinimizeNotificationPage> {
                             ),
                           ),
                           SizedBox(
-                            height: 30.h,
-                          ),
-                          SizedBox(
-                            height: 30.h,
+                            height: 60.h,
                           ),
                           Text(
                               "Voilà, now the Spartial notification is minimized!",
@@ -193,9 +190,121 @@ class _MinimizeNotificationPageState extends State<MinimizeNotificationPage> {
                           ),
                         ]
                       // IOS instructions.
-                      // Are empty because IOS will never happen
-                      // because this app cannot be launched due to Spotify restrictions.
-                      : [],
+                      : Platform.isIOS ? [
+                        Text(
+                            "How to hide Spartial notification",
+                            style: Theme.of(context).textTheme.headline2,
+                          ),
+                          SizedBox(
+                            height: 60.h,
+                          ),
+                          Text(
+                            "The steps to hide the Spartial notification might be a little different for every iOS version but they should look somewhat like this.",
+                            style: Theme.of(context).textTheme.subtitle1,
+                            maxLines: 4,
+                          ),
+                          SizedBox(
+                            height: 60.h,
+                          ),
+                          // 1.
+                          Text(
+                            "1. Go to settings and click on Spartial.",
+                            style: Theme.of(context).textTheme.subtitle1,
+                            maxLines: 2,
+                          ),
+                          SizedBox(
+                            height: 30.h,
+                          ),
+                          Image.asset(
+                            'assets/hide_notifications_ios/1.jpg',
+                          ),
+                          SizedBox(
+                            height: 30.h,
+                          ),
+                          // 2.
+                          Text(
+                            "2. Go to 'Notifications'.",
+                            style: Theme.of(context).textTheme.subtitle1,
+                            maxLines: 2,
+                          ),
+                          SizedBox(
+                            height: 30.h,
+                          ),
+                          Image.asset(
+                            'assets/hide_notifications_ios/2.jpg',
+                          ),
+                          // 3.
+                          SizedBox(
+                            height: 30.h,
+                          ),
+                          Text(
+                            "3. Disable 'Lock Screen', 'Banners', 'Sounds', and 'Badges'.",
+                            style: Theme.of(context).textTheme.subtitle1,
+                            maxLines: 2,
+                          ),
+                          SizedBox(
+                            height: 30.h,
+                          ),
+                          Image.asset(
+                            'assets/hide_notifications_ios/3.jpg',
+                          ),
+                          // 4.
+                          SizedBox(
+                            height: 30.h,
+                          ),
+                          Image.asset(
+                            'assets/hide_notifications_ios/4.jpg',
+                          ),
+                          // 5.
+                          SizedBox(
+                            height: 30.h,
+                          ),
+                          Text(
+                            "5. Restart the foreground task:",
+                            style: Theme.of(context).textTheme.subtitle1,
+                            maxLines: 2,
+                          ),
+                          SizedBox(
+                            height: 30.h,
+                          ),
+                          // Restart button.
+                          Center(
+                            child: SolidRoundedButton(
+                              text: "Restart",
+                              onPressed: () async {
+                                // Only allow restarting every 'minSecsBetweenRestarts' seconds.
+                                if (DateTime.now()
+                                        .difference(lastRestartTime)
+                                        .inSeconds >
+                                    minSecsBetweenRestarts) {
+                                  lastRestartTime = DateTime.now();
+                                  if (await ForegroundTask.isRunningService()) {
+                                    ForegroundTask.restart();
+                                  } else {
+                                    Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute<void>(
+                                        builder: (BuildContext context) =>
+                                            const NavigationWrapper(),
+                                      ),
+                                    );
+                                  }
+                                }
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            height: 60.h,
+                          ),
+                          Text(
+                              "Voilà, now the Spartial notification is minimized!",
+                              style: Theme.of(context).textTheme.subtitle1,
+                              maxLines: 2,
+                              textAlign: TextAlign.center),
+                          SizedBox(
+                            height: 30.h,
+                          ),
+                      ] : [],
                 ))),
           ),
         ),

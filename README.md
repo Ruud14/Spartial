@@ -19,13 +19,19 @@ Songs can be added to Spartial by sharing them from Spotify to Spartial. Then, i
 
 
 ###  How to install
-- #### Option 1: From .apk or .ipa:
-This app is not available in the App store or Play store, please read [About the app](https://spartial.app/about) to find out why. Thus, you'll have to install the app by means of its [.apk](https://github.com/Ruud14/Spartial/releases/download/v1.0.2/Spartial1.0.2.apk) or [.ipa](https://github.com/Ruud14/Spartial/releases/download/v1.0.2/Spartial1.0.2.ipa) file. 
-The .ipa file has only been tested on an emulator, so it is not guaranteed to work on a real device.
+- #### Option 1: From .apk (Android only)
+This app is not available in the App store or Play store, please read [About the app](https://spartial.app/about) to find out why. Thus, you'll have to install the app by means of its [.apk](https://github.com/Ruud14/Spartial/releases/download/v1.0.2/Spartial1.0.2.apk) file. 
 
-- ####  Option 2: From source code
-Building the app from the source code is also possible. Besides the fact that I expect you to know how to [build a flutter app from source](https://docs.flutter.dev/deployment/android#build-an-apk), the setup process differs in a couple of ways, one of which is:
--- You'll have to create your own custom SHA1 fingerprint and put that in the Spotify developer dashboard (see [here](https://spartial.app/setup)) instead of the one I provided. [This](https://stackoverflow.com/questions/51845559/generate-sha-1-for-flutter-react-native-android-native-app) might help you generate your SHA1 fingerprint.
+
+- ####  Option 2: From source code (Android & iOS)
+
+Building the app from the source code is also possible. Besides the fact that I expect you to know how to [build a flutter app from source](https://docs.flutter.dev/deployment/android#build-an-apk), 
+the setup process differs in a couple of ways, one of which is the fact that
+you'll have to create your own custom SHA1 fingerprint and put that in the Spotify developer dashboard (see [here](https://spartial.app/setup)) instead of the one I provided. [This](https://stackoverflow.com/questions/51845559/generate-sha-1-for-flutter-react-native-android-native-app) might help you generate your SHA1 fingerprint.
+
+_**Note for iOS**: The app has only been tested on the Xcode simulator. 
+I don't own an [Apple developer program](https://developer.apple.com/programs/) subscription, so I cannot sign the app and distribute the .ipa file. This means that in order to run the app on iOS you'll have to build the project using Xcode and sign it with your own certificate for which you need an [Apple developer program](https://developer.apple.com/programs/) subscription. After signing and building the app, you can load the app onto your phone using [Diawi](https://www.diawi.com/) or a similar tool._
+
 
 ###  How to set up
 After installing the app, you'll need a client ID to continue.
@@ -49,5 +55,4 @@ Found a bug? Please report it [here](https://github.com/Ruud14/Spartial/issues).
 
 
 ### NOTES: 
-- The iOS version has only been tested on an emulator so it might not fully work on a real device.
 - This app is for educational purpose only!

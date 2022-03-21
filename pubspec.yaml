@@ -56,10 +56,15 @@ flutter:
     - assets/selection_example_2.png
     - assets/selection_example_3.png
     - assets/spartial_notification.png
+    - assets/ios_notification.jpg
     - assets/hide_notifications/1.jpg
     - assets/hide_notifications/2.jpg
     - assets/hide_notifications/3.jpg
     - assets/hide_notifications/4.jpg
+    - assets/hide_notifications_ios/1.jpg
+    - assets/hide_notifications_ios/2.jpg
+    - assets/hide_notifications_ios/3.jpg
+    - assets/hide_notifications_ios/4.jpg
     - assets/hide_notifications/6.jpg
     - assets/share_instruction.jpg
     - assets/spotify/Spotify_Icon_RGB_Black.png
