@@ -49,8 +49,7 @@ class ForegroundTask {
       androidNotificationOptions: AndroidNotificationOptions(
         channelId: 'notification_channel_id',
         channelName: 'Foreground Notification',
-        channelDescription:
-            'This notification appears when the foreground service is running.',
+        channelDescription: 'This notification appears when the foreground service is running.',
         channelImportance: NotificationChannelImportance.MIN,
         priority: NotificationPriority.MIN,
         iconData: const NotificationIconData(
@@ -130,8 +129,7 @@ class ForegroundTaskHandler extends TaskHandler {
 
   /// Forground notification message texts.
   String reauthRequiredMessage = "Login expired, Login to contiue...";
-  String noInternetConnectionMessage =
-      "Cannot connect to Spotify, check your internet connection...";
+  String noInternetConnectionMessage = "Cannot connect to Spotify, check your internet connection...";
   String isPlayingMessage = "Running. Tap to open.";
   String idleMessage = "Idle. Waiting for Spotify to play.";
 
@@ -179,8 +177,7 @@ class ForegroundTaskHandler extends TaskHandler {
   void _waitSecondsBeforeChecking(int seconds) {
     if (waitUntilChecking == null ||
         waitUntilChecking!.difference(DateTime.now()).inSeconds < seconds ||
-        waitUntilChecking!.difference(DateTime.now()).inSeconds.abs() <
-            seconds) {
+        waitUntilChecking!.difference(DateTime.now()).inSeconds.abs() < seconds) {
       waitUntilChecking = DateTime.now().add(Duration(seconds: seconds));
     }
   }
@@ -193,10 +190,7 @@ class ForegroundTaskHandler extends TaskHandler {
   /// Update the text of the forground notification.
   void _updateNotification(String message) async {
     currentMessage = message;
-    FlutterForegroundTask.updateService(
-        notificationTitle: "Spartial",
-        notificationText: message,
-        callback: null);
+    FlutterForegroundTask.updateService(notificationTitle: "Spartial", notificationText: message, callback: null);
   }
 
   /// Runs every _eventIntervalTimeMS while the foreground task is running.
@@ -252,31 +246,21 @@ class ForegroundTaskHandler extends TaskHandler {
     // whenever something has changed.
     if (!hasInternet && !(currentMessage == noInternetConnectionMessage)) {
       _updateNotification(noInternetConnectionMessage);
-    } else if (reauthRequired &&
-        !(currentMessage == reauthRequiredMessage) &&
-        hasInternet) {
+    } else if (reauthRequired && !(currentMessage == reauthRequiredMessage) && hasInternet) {
       try {
         // Let the user know that they must reauthenticate.
-        LocalNotification.show(
-            title: "Spartial Login required",
-            body: "Your login has expired, Tap to reauthenticate.");
+        LocalNotification.show(title: "Spartial Login required", body: "Your login has expired, Tap to reauthenticate.");
       } on Exception catch (e) {
         Logger.error(e);
       }
       _updateNotification(reauthRequiredMessage);
-    } else if (isSpotifyPlaying! &&
-        !(currentMessage == isPlayingMessage) &&
-        hasInternet &&
-        !reauthRequired) {
+    } else if (isSpotifyPlaying! && !(currentMessage == isPlayingMessage) && hasInternet && !reauthRequired) {
       _updateNotification(isPlayingMessage);
     } else if (isSpotifyPlaying == null) {
       // Still in search for a bug:
       _updateNotification("ISPLAYING IS NULL!");
     } else {
-      if (!(currentMessage == idleMessage) &&
-          hasInternet &&
-          !reauthRequired &&
-          !isSpotifyPlaying!) {
+      if (!(currentMessage == idleMessage) && hasInternet && !reauthRequired && !isSpotifyPlaying!) {
         _updateNotification(idleMessage);
       }
     }
@@ -294,7 +278,7 @@ class ForegroundTaskHandler extends TaskHandler {
 
   /// Is run when the foreground task is stopped.
   @override
-  Future<void> onDestroy(DateTime timestamp) async {
+  Future<void> onDestroy(DateTime timestamp, port) async {
     await FlutterForegroundTask.clearAllData();
   }
 }
