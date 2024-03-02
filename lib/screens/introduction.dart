@@ -319,11 +319,12 @@ class _IntroductionPageState extends State<IntroductionPage> {
             }
           });
         },
-        color: Theme.of(context).colorScheme.secondary,
+        // globalBackgroundColor: Theme.of(context).colorScheme.secondary,
         done: const Text("Done", style: TextStyle(fontWeight: FontWeight.w600)),
         skip: const Text("Skip", style: TextStyle(fontWeight: FontWeight.w600)),
         showNextButton: false,
         showSkipButton: showSkipButton,
+        bodyPadding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 50.h),
       ),
     );
   }

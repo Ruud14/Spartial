@@ -29,7 +29,7 @@ class Spartial extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(1080, 1920),
-      builder: () => MaterialApp(
+      builder: (c, w) => MaterialApp(
         title: 'Spartial',
         // Create the app theme data.
         theme: ThemeData(
@@ -40,7 +40,11 @@ class Spartial extends StatelessWidget {
             colorScheme: ColorScheme.fromSwatch().copyWith(
               secondary: Colors.green,
             ),
-
+            appBarTheme: const AppBarTheme(
+              iconTheme: IconThemeData(
+                color: Colors.white
+              )
+            ),
             /// Background color.
             scaffoldBackgroundColor: Colors.black,
             sliderTheme: SliderThemeData(

@@ -192,15 +192,15 @@ class _NavigationWrapperState extends State<NavigationWrapper> {
       // Set up sharing to the app.
       // For sharing or opening urls/text coming from outside the app while the app is in the memory
       _intentDataStreamSubscription =
-          ReceiveSharingIntent.getTextStream().listen((String value) {
-        handleSharedData(value);
+        ReceiveSharingIntent.getMediaStream().listen((List<SharedMediaFile> files) {
+          if (files.isEmpty) return;
+          handleSharedData(files[0].path);
       }, onError: (err) {});
 
       // For sharing or opening urls/text coming from outside the app while the app is closed
-      ReceiveSharingIntent.getInitialText().then((String? value) {
-        if (value != null) {
-          handleSharedData(value);
-        }
+      ReceiveSharingIntent.getInitialMedia().then((List<SharedMediaFile> files) {
+        if (files.isEmpty) return;
+        handleSharedData(files[0].path);
       });
     }
   }

@@ -97,12 +97,12 @@ class SpotifyWebApi {
 
   /// Get the current player state.
   /// Throws SocketException when a connection cannot be established.
-  static Future<Player> _getPlayerState() async {
+  static Future<PlaybackState> _getPlayerState() async {
     if (spotify == null) {
       _createSpotifyFromStoredCredentials();
     }
 
-    Player player = await spotify!.me.currentlyPlaying();
+    PlaybackState player = await spotify!.player.currentlyPlaying();
     return player;
   }
 
@@ -242,7 +242,7 @@ class SpotifyWebApi {
         }
       } on Exception {}
     }
-    return (await _getPlayerState()).is_playing;
+    return (await _getPlayerState()).isPlaying;
   }
 
   /// Get a list of devices on which spotify can play.
@@ -312,12 +312,12 @@ class SpotifyWebApi {
       {required Function onSkip}) async {
     // Get the player state.
     // This will throw an error if a connection with the player can't be established.
-    Player player = await _getPlayerState();
+    PlaybackState player = await _getPlayerState();
     Track? track = player.item;
     // If there is a track playing
     if (track != null) {
       String? trackID = track.id;
-      int? playbackPosition = player.progress_ms;
+      int? playbackPosition = player.progressMs;
       // Check wether the currently playing song is stored.
       if (trackID != null &&
           playbackPosition != null &&
