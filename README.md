@@ -20,7 +20,7 @@ Songs can be added to Spartial by sharing them from Spotify to Spartial. Then, i
 
 ###  How to install
 - #### Option 1: From .apk (Android only)
-This app is not available in the App store or Play store, please read [About the app](https://spartial.app/about) to find out why. Thus, you'll have to install the app by means of its [.apk](https://github.com/Ruud14/Spartial/releases/download/v1.0.2/Spartial1.0.2.apk) file. 
+This app is not available in the App store or Play store, please read [About the app](https://spartial.app/about) to find out why. Thus, you'll have to install the app by means of its [.apk](https://github.com/Ruud14/Spartial/releases/download/v1.0.3/Spartial1.0.3.apk) file. 
 
 
 - ####  Option 2: From source code (Android & iOS)
