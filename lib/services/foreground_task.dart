@@ -14,6 +14,7 @@ import 'package:oauth2/src/authorization_exception.dart';
 import 'package:spartial/services/storage.dart';
 
 /// The foreground task start callback function should always be a top-level function.
+@pragma('vm:entry-point')
 void startCallback() {
   // The setTaskHandler function must be called to handle the task in the background.
   FlutterForegroundTask.setTaskHandler(ForegroundTaskHandler());
